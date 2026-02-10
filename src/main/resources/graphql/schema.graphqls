@@ -1,0 +1,19 @@
+type UserRegister {
+    id: ID
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    contactId: ID
+}
+
+type Query {
+    getAllUsers: [UserRegister]
+    getUserById(id: ID): UserRegister
+}
+
+type Mutation {
+    createUser(firstName:String,lastName:String,email:String,password:String,contactId:ID): UserRegister
+    updateUser(id:ID,firstName:String,lastName:String,email:String,password:String,contactId:ID): UserRegister
+    deleteUser(id:ID): String
+}
